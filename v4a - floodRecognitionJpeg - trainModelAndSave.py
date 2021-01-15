@@ -26,7 +26,7 @@ ImageFile.LOAD_TRUNCATED_IMAGES = True
 
 ###############################################
 # DIR with training images
-base_dir = 'C:/Users/p1p29/Monitor for floods'
+base_dir = './'
 # Number training images
 ntrain = 15
 # Number validation images
@@ -186,7 +186,7 @@ history = model.fit_generator(
 
 #######################################
 # Save model
-model.save('C:/Users/p1p29/Monitor for floods/Model/keras_multiclass_flickr_model_with_target_size_at_150_by_150.hdf5')
+model.save('Model/keras_multiclass_flickr_model_with_target_size_at_150_by_150.hdf5')
 end = datetime.datetime.now()
 delta = str(end-start)
 
