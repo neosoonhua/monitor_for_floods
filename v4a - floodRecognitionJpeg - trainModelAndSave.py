@@ -186,7 +186,7 @@ history = model.fit_generator(
 
 #######################################
 # Save model
-model.save('C:/Users/p1p29/Monitor for floods/Model/keras_multiclass_flickr_model_with_target_size_at_480_by_480.hdf5')
+model.save('C:/Users/p1p29/Monitor for floods/Model/keras_multiclass_flickr_model_with_target_size_at_150_by_150.hdf5')
 end = datetime.datetime.now()
 delta = str(end-start)
 
