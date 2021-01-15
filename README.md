@@ -6,4 +6,4 @@ Currently, I set the code to show only those classified as "no flood" because no
 Steps:
 1) Run "v4a - floodRecognitionJpeg - trainModelAndSave.py" to train the AI model and save the model.
 2) Run "download_images_periodically.r" which would download the photos every 5 minutes.
-3) Run "v4b - floodRecognitionJpeg - loadModelThenTestPeriodically.py" which would classify each photo with "Flood", "No flood" or "Blue image" every 5 minutes.
+3) Run "v4b - floodRecognitionJpeg - loadModelThenTestPeriodically.py" which would load the model and - every 5 minutes - classify each photo with "Flood", "No flood" or "Blue image".
