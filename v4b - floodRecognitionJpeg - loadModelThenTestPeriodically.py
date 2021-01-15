@@ -15,7 +15,7 @@ import time
 import datetime
 
 # Load model
-model = load_model('C:/Users/p1p29/Monitor for floods/Model/keras_multiclass_flickr_model_with_target_size_at_150_by_150.hdf5')
+model = load_model('Model/keras_multiclass_flickr_model_with_target_size_at_150_by_150.hdf5')
 
 #Images are stored in C:/Users/p1p29/Monitor for floods/Test/images/. The data generator will only look for images in subfolders of C:/Users/p1p29/Monitor for floods/Test (as specified in test_generator). 
 """It is important to respect the logic of the data generator, so the subfolder /images/ is required."""
@@ -24,7 +24,7 @@ model = load_model('C:/Users/p1p29/Monitor for floods/Model/keras_multiclass_fli
 while True:
     test_datagen = ImageDataGenerator(rescale=1./255)
     test_generator = test_datagen.flow_from_directory(
-            "C:/Users/p1p29/Monitor for floods/Test", 
+            "Test", 
             target_size=(150, 150),
             batch_size=2,
             class_mode='binary',
@@ -52,7 +52,7 @@ while True:
           horizontal_flip=True,
           fill_mode='nearest')
     
-    base_dir = 'C:/Users/p1p29/Monitor for floods'
+    base_dir = './'
     train_dir = os.path.join(base_dir, 'Train')
     batch_size = 2 #20
     train_generator = train_datagen.flow_from_directory(
@@ -74,8 +74,7 @@ while True:
         if predictions[i] == "No_flood":
             print(filenames[i] + ": No flood")
             
-    print("Downloaded CCTV images at about:")
+    print("Classified CCTV images at about:")
     print(datetime.datetime.now())
 
     time.sleep(29) #Pause for 300 seconds. "http://pub.cloudapp.net/CCTVS/" updates the CCTV images every 5 minutes. My machine takes about 4 minutes 31 seconds to run these code.
-
